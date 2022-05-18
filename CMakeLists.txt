@@ -34,6 +34,6 @@ add_library(glfw_opengl3 STATIC
 	)
 
 set_target_properties(glfw_opengl3 PROPERTIES LINKER_LANGUAGE CXX)
-target_include_directories(glfw_opengl3 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/backends)
+target_include_directories(glfw_opengl3 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/backends ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(glfw_opengl3 PRIVATE ImGui::imgui_core OpenGL::GL glfw ${GLFW_LIBRARIES})
 add_library(ImGui::glfw_opengl3 ALIAS glfw_opengl3)
