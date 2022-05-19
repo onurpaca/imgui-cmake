@@ -23,7 +23,12 @@ add_library(imgui_core STATIC
 	)
 
 set_target_properties(imgui_core PROPERTIES LINKER_LANGUAGE CXX)
-target_include_directories(imgui_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+target_include_directories(imgui_core PUBLIC 
+	${CMAKE_CURRENT_SOURCE_DIR} 
+	${CMAKE_CURRENT_SOURCE_DIR}/third_party/glfw/include
+	)
+
 add_library(ImGui::imgui_core ALIAS imgui_core)
 
 find_package(OpenGL REQUIRED)
